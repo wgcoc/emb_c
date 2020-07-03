@@ -13,7 +13,7 @@ struct Queue{
     int (*isFull)(Queue* const me);
     int (*isEmpty)(Queue* const me);
     int (*getSize)(Queue* const me);
-    int (*insert)(Queue* const me);
+    int (*insert)(Queue* const me,int k);
     int (*remove)(Queue* const me);
 };
 

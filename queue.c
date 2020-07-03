@@ -5,7 +5,7 @@
 void Queue_Init(Queue* const me, int (*isFullFunction)(Queue* const me),
     int (*isEmptyFunction)(Queue* const me),
     int (*getSizeFunction)(Queue* const me),
-    void (*insertFunction)(Queue * const, int k),
+    void (*insertFunction)(Queue * const me, int k),
     int (*removeFunction)(Queue* const me) ){
     /* initialize attributes */
     me->head = 0;

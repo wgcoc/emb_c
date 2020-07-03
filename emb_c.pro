@@ -8,8 +8,10 @@ CONFIG -= app_bundle
 TEMPLATE = app
 
 SOURCES += main.cpp \
-    Business.cpp
+    Business.cpp \
+    queue.c
 
 HEADERS += \
-    Business.hpp
+    Business.hpp \
+    queue.h
 
