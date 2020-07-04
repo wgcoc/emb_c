@@ -6,13 +6,12 @@
 #include "ECGPkg.h"
 #include "TimeMarkedData.h"
 
-typedef struct TMDQueue TMDQueue;
 /*
-This queue is meant to operate as a "leaky" queue. In this queue,data are never removed perse,
+This queue is meant to operate as a "leaky渗透" queue. In this queue,data are never removed perse,
 but are instead overwritten when the buffer pointer wraps around.This allows for many
 client to read the same from queue.
 */
-
+typedef struct TMDQueue TMDQueue;
 struct TMDQueue{
     int head;
     int size;
@@ -29,6 +28,7 @@ void TMDQueue_insert(TMDQueue* const me,const struct TimeMarkedData tmd);
 boolean TMDQueue_isEmpty(TMDQueue* const me);
 struct TimeMarkedData TMDQueue_remove(TMDQueue* const me,int index);
 int TMDQueue_getBuffer(const TMDQueue* const me);
+
 TMDQueue * TMDQueue_Create(void);
 void TMDQueue_Destroy(TMDQueue* const me);
 

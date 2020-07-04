@@ -69,6 +69,7 @@ void TMDQueue_Destroy(TMDQueue * const me){
     free(me);
 }
 
+// 初始化关系
 static void initRelations(TMDQueue* const me){
     int iter = 0;
     while(iter < QUEUE_SIZE){

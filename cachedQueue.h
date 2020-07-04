@@ -17,7 +17,7 @@ struct CachedQueue{
     int (*isFull)(CachedQueue* const me);
     int (*isEmpty)(CachedQueue* const me);
     int (*getSize)(CachedQueue* const me);
-    void (*insert)(CachedQueue* const me);
+    void (*insert)(CachedQueue* const me,int k);
     int (*remove)(CachedQueue* const me);
     /* new virtual functions */
     void (*flush)(CachedQueue* const me);
