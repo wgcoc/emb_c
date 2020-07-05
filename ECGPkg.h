@@ -4,6 +4,8 @@
 
 #include <stdio.h>
 
+typedef void (*UpdateFuncPtr)(int instanceNum,int value);
+
 /* forward declarations */
 struct ArrythmiaDetector; // 心律失常检测器
 struct ECG_Module;

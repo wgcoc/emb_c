@@ -4,8 +4,6 @@
 #include "stdio.h"
 #include "ECGPkg.h"
 
-typedef void (*UpdateFuncPtr)(int instanceNum,int value);
-
 typedef struct NotificationHandle NotificationHandle;
 struct NotificationHandle{
     UpdateFuncPtr updateAddr;

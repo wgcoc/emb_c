@@ -22,7 +22,6 @@ struct TMDQueue_OBS{
     struct NotificationHandle* itsNotificationHandle;
 };
 
-
 /* Constructor and destructor */
 void TMDQueue_OBS_Init(TMDQueue_OBS* const me);
 void TMDQueue_OBS_Cleanup(TMDQueue_OBS* const me);
@@ -37,7 +36,15 @@ struct TimeMarkedData TMDQueue_OBS_remove(TMDQueue_OBS* const me,int index);
 /* The NotificationHandle is managed as a linked list,
  *  with insertions coming at the end.
 */
-int TMDQueue_OBS_subscribe(TMDQueue_OBS* const me,const UpdateUp);
+int TMDQueue_OBS_subscribe(TMDQueue_OBS* const me,const UpdateFuncPtr updateFuncAddr);
+int TMDQueue_OBS_unsubscribe(TMDQueue_OBS* const me,const UpdateFuncPtr updateFuncAddr);
+
+int TMDQueue_OBS_getBuffer(TMDQueue_OBS* const me);
+
+struct NotificationHandle* TMDQueue_OBS_getItsNotificationHandle(TMDQueue_OBS* const me);
+
+void TMDQueue_OBS_getItsNotificationHandle(
+       MDQueue_OBS* const me,struct NotificationHandle* p_NotificationHandle);
 
 TMDQueue * TMDQueue_OBS_Create(void);
 void TMDQueue_OBS_Destroy(TMDQueue_OBS* const me);
