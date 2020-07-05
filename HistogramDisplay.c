@@ -10,7 +10,7 @@ void HistogramDisplay_Init(HistogramDisplay* const me){
 }
 
 void HistogramDisplay_Cleanup(HistogramDisplay* const me){
-    cleanUpRelation();
+    cleanUpRelation(me);
 }
 
 /* Operations getValue() */
@@ -26,12 +26,26 @@ void HistogramDisplay_updateHistogram(HistogramDisplay* const me){
     /* put som histogram stuff here... */
 }
 
-struct TMDQueue* HistogramDisplay_getItsTMDQueue(const HistogramDisplay* const me);
-void HistogramDisplay_setItsTMDQueue(HistogramDisplay* const me,struct TMDQueue* p_TMDQueue);
+struct TMDQueue* HistogramDisplay_getItsTMDQueue(const HistogramDisplay* const me){
+    return (struct TMDQueue*)me->itsTMDQueue;
+}
 
-HistogramDisplay * HistogramDisplay_Create(void);
-void HistogramDisplay_Destroy(HistogramDisplay* const me);
+void HistogramDisplay_setItsTMDQueue(HistogramDisplay* const me,struct TMDQueue* p_TMDQueue){
+    me->itsTMDQueue = p_TMDQueue;
+}
 
+HistogramDisplay * HistogramDisplay_Create(void){
+
+}
+void HistogramDisplay_Destroy(HistogramDisplay* const me){
+
+}
+
+static void cleanUpRelation(HistogramDisplay* const me){
+    if(me->itsTMDQueue != NULL){
+        me->itsTMDQueue = NULL;
+    }
+}
 
 
 

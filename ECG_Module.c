@@ -10,7 +10,7 @@ void ECG_Module_Init(ECG_Module* const me){
 }
 
 void ECG_Module_Cleanup(ECG_Module* const me){
-    cleanUpRelation();
+    cleanUpRelation(me);
 }
 
 /* operation acquireValue() */

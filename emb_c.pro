@@ -14,7 +14,10 @@ SOURCES += main.cpp \
     TMDQueue.c \
     TimeMarkedData.c \
     ECG_Module.c \
-    HistogramDisplay.c
+    HistogramDisplay.c \
+    TestBuilder.c \
+    NotificationHandle.c \
+    TMDQueue_OBS.c
 
 HEADERS += \
     Business.hpp \
@@ -25,5 +28,8 @@ HEADERS += \
     TMDQueue.h \
     includes.h \
     ECG_Module.h \
-    HistogramDisplay.h
+    HistogramDisplay.h \
+    TestBuilder.h \
+    NotificationHandle.h \
+    TMDQueue_OBS.h
 

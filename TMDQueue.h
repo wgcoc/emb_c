@@ -1,7 +1,6 @@
 #ifndef TMDQUEUE_H
 #define TMDQUEUE_H
 
-/*## auto_generated*/
 #include <stdio.h>
 #include "ECGPkg.h"
 #include "TimeMarkedData.h"

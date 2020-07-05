@@ -7,7 +7,7 @@ struct TMDQueue;
 /* class HistogramDisplay */
 typedef struct HistogramDisplay HistogramDisplay;
 struct HistogramDisplay{
-    int index;
+    int index; // 注意：负责维护该类在队列（itsTMDQueue）中的数据访问位置，不会影响到其他类对同一队列的数据访问
     struct TMDQueue* itsTMDQueue;
 };
 
