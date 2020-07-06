@@ -1,3 +1,4 @@
+// 本质上是个列表list
 #ifndef NOTIFICATIONHANDLE_H
 #define NOTIFICATIONHANDLE_H
 

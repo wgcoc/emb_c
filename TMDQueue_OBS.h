@@ -43,10 +43,10 @@ int TMDQueue_OBS_getBuffer(TMDQueue_OBS* const me);
 
 struct NotificationHandle* TMDQueue_OBS_getItsNotificationHandle(TMDQueue_OBS* const me);
 
-void TMDQueue_OBS_getItsNotificationHandle(
-       MDQueue_OBS* const me,struct NotificationHandle* p_NotificationHandle);
+void TMDQueue_OBS_setItsNotificationHandle(
+       TMDQueue_OBS* const me,struct NotificationHandle* p_NotificationHandle);
 
-TMDQueue * TMDQueue_OBS_Create(void);
+TMDQueue_OBS * TMDQueue_OBS_Create(void);
 void TMDQueue_OBS_Destroy(TMDQueue_OBS* const me);
 
 #endif // TMDQUEUE_OBS_H

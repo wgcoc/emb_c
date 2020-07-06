@@ -93,7 +93,7 @@ int TMDQueue_OBS_subscribe(TMDQueue_OBS* const me,const UpdateFuncPtr updateFunc
     ++me->nSubcribers;
     printf("----->wrote updateAddr \n");
     if(pNH->itsNotificationHandle)
-        pritnf("xxxxxxx> next Ptr not null!\n\n");
+        printf("xxxxxxx> next Ptr not null!\n\n");
     else
         printf("-----> next ptr null\n\n");
 }
@@ -137,14 +137,38 @@ int TMDQueue_OBS_getBuffer(TMDQueue_OBS* const me){
 }
 
 struct NotificationHandle* TMDQueue_OBS_getItsNotificationHandle(TMDQueue_OBS* const me){
+    return (struct NotificationHandle*)me->itsNotificationHandle;
+}
+
+void TMDQueue_OBS_setItsNotificationHandle(
+       TMDQueue_OBS* const me,struct NotificationHandle* p_NotificationHandle){
+    me->itsNotificationHandle = p_NotificationHandle;
+}
+
+TMDQueue_OBS *TMDQueue_OBS_Create(void){
+
+}
+void TMDQueue_OBS_Destroy(TMDQueue_OBS* const me){
 
 }
 
-void TMDQueue_OBS_getItsNotificationHandle(
-       MDQueue_OBS* const me,struct NotificationHandle* p_NotificationHandle){
-
+static void initRelations(TMDQueue_OBS* const me){
+    int iter = 0;
+    while(iter < QUEUE_SIZE){
+        TimeMarkedData_Init(&(me->buffer[iter]));
+        TimeMarkedData_setItsTMDQueue(&(me->buffer[iter]),me);
+        iter++;
+    }
 }
 
-TMDQueue * TMDQueue_OBS_Create(void);
-void TMDQueue_OBS_Destroy(TMDQueue_OBS* const me);
+static void cleanUpRelations(TMDQueue_OBS* const me){
+    int iter = 0;
+    while(iter < QUEUE_SIZE){
+        TimeMarkedData_Cleanup(&(me->buffer[iter]));
+        iter++;
+    }
 
+    if(me->itsNotificationHandle != NULL){
+        me->itsNotificationHandle = NULL;
+    }
+}

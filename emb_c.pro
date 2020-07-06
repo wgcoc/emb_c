@@ -17,7 +17,11 @@ SOURCES += main.cpp \
     HistogramDisplay.c \
     TestBuilder.c \
     NotificationHandle.c \
-    TMDQueue_OBS.c
+    TMDQueue_OBS.c \
+    HistogramDisplay_OBS.c \
+    observer/Observer.c \
+    observer/Subject.c \
+    observer/main_test.c
 
 HEADERS += \
     Business.hpp \
@@ -31,5 +35,9 @@ HEADERS += \
     HistogramDisplay.h \
     TestBuilder.h \
     NotificationHandle.h \
-    TMDQueue_OBS.h
+    TMDQueue_OBS.h \
+    HistogramDisplay_OBS.h \
+    observer/List.h \
+    observer/Observer.h \
+    observer/Subject.h
 
